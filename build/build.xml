@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../." default="initialize" name="initialize-web">
+
+<property name="project.location" value="D:/Project/demo"/>
+<property name="project.name" value="myName"/>
+<property name="web.dir" value="${basedir}/web"/>
+
+<target name="initialize">
+    <mkdir dir="${project.location}/${project.name}/src"/>
+    <mkdir dir="${project.location}/${project.name}/lib"/>
+    <mkdir dir="${project.location}/${project.name}/target"/>
+    <mkdir dir="${project.location}/${project.name}/build"/>
+    <mkdir dir="${project.location}/${project.name}/web"/>
+    <mkdir dir="${project.location}/${project.name}/web/js"/>
+    <mkdir dir="${project.location}/${project.name}/web/css"/>
+    <mkdir dir="${project.location}/${project.name}/web/images"/>
+    <mkdir dir="${project.location}/${project.name}/web/WEB-INF"/>
+    <copy todir="${project.location}/${project.name}" file="path/project.txt">
+	</copy>
+    <copy todir="${project.location}/${project.name}" file="path/classpath.txt">
+	</copy>
+	
+    <copy todir="${project.location}/${project.name}/lib" file="lib/maven-ant-tasks-2.1.3.jar">
+	</copy>
+	
+    <move file="${project.location}/${project.name}/project.txt" tofile="${project.location}/${project.name}/.project"/>
+    <move file="${project.location}/${project.name}/classpath.txt" tofile="${project.location}/${project.name}/.classpath"/>
+    
+    <!-- 
+   <attrib file="${project.location}/${project.name}/.classpath" readonly="true" hidden="true"/> 	   
+   <attrib file="${project.location}/${project.name}/.project" readonly="true" hidden="true"/>
+    --> 	   
+</target>
+
+
+</project>
